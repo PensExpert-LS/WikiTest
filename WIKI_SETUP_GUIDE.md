@@ -12,7 +12,7 @@ Diese Anleitung beschreibt, wie Sie die vorgefertigten Wiki-Seiten in Ihr GitHub
 
 ### 1. GitHub Wiki aktivieren
 
-1. Öffnen Sie Ihr GitHub Repository: `https://github.com/PensExpert-LS/WikiTest`
+1. Öffnen Sie Ihr GitHub Repository
 2. Klicken Sie auf **Settings** (Einstellungen)
 3. Scrollen Sie zum Abschnitt **Features**
 4. Aktivieren Sie **Wikis** ✓
@@ -32,13 +32,22 @@ Jedes GitHub Wiki hat ein eigenes Git-Repository. Die URL lautet:
 https://github.com/[USERNAME]/[REPOSITORY].wiki.git
 ```
 
-**Für dieses Repository:**
+**Beispiel für dieses Template-Repository:**
 ```bash
 # Wiki-Repository klonen
 git clone https://github.com/PensExpert-LS/WikiTest.wiki.git
 
 # In das Wiki-Verzeichnis wechseln
 cd WikiTest.wiki
+```
+
+**Für Ihr eigenes Repository:**
+```bash
+# Ersetzen Sie [IhrOrg] und [IhrRepo] mit Ihren Werten
+git clone https://github.com/[IhrOrg]/[IhrRepo].wiki.git
+
+# In das Wiki-Verzeichnis wechseln
+cd [IhrRepo].wiki
 ```
 
 Falls das Wiki noch nicht existiert, erstellen Sie zunächst die erste Seite über die GitHub-Oberfläche, dann können Sie klonen.
@@ -50,28 +59,39 @@ Falls das Wiki noch nicht existiert, erstellen Sie zunächst die erste Seite üb
 Wenn Sie das Haupt-Repository bereits geklont haben:
 
 ```bash
-# Angenommen, WikiTest und WikiTest.wiki sind nebeneinander
-cp ../WikiTest/wiki/*.md .
+# Angenommen, beide Repositories sind nebeneinander
+cp ../[IhrRepo]/wiki/*.md .
 
 # Oder mit vollständigem Pfad
-cp /pfad/zu/WikiTest/wiki/*.md .
+cp /pfad/zu/[IhrRepo]/wiki/*.md .
+```
+
+**Beispiel mit diesem Template:**
+```bash
+cp ../WikiTest/wiki/*.md .
 ```
 
 #### Option B: Direkt von GitHub herunterladen
 
 ```bash
 # Haupt-Repository klonen (falls noch nicht vorhanden)
-git clone https://github.com/PensExpert-LS/WikiTest.git
+git clone https://github.com/[IhrOrg]/[IhrRepo].git
 
 # Wiki-Dateien kopieren
+cp [IhrRepo]/wiki/*.md [IhrRepo].wiki/
+```
+
+**Beispiel mit diesem Template:**
+```bash
+git clone https://github.com/PensExpert-LS/WikiTest.git
 cp WikiTest/wiki/*.md WikiTest.wiki/
 ```
 
 ### 5. Änderungen committen und pushen
 
 ```bash
-# Zurück ins Wiki-Verzeichnis
-cd WikiTest.wiki
+# Zurück ins Wiki-Verzeichnis (passen Sie den Namen an)
+cd [IhrRepo].wiki
 
 # Status prüfen
 git status
@@ -88,10 +108,13 @@ git push origin master
 
 ### 6. Wiki aufrufen und testen
 
-1. Öffnen Sie: `https://github.com/PensExpert-LS/WikiTest/wiki`
+1. Öffnen Sie: `https://github.com/[IhrOrg]/[IhrRepo]/wiki`
 2. Sie sollten jetzt die Home-Seite sehen
 3. Die Sidebar (Navigation) sollte links erscheinen
 4. Der Footer sollte unten auf jeder Seite sichtbar sein
+
+**Beispiel mit diesem Template:**
+- URL: `https://github.com/PensExpert-LS/WikiTest/wiki`
 
 ## ✏️ Wiki-Seiten bearbeiten
 
@@ -106,8 +129,8 @@ git push origin master
 ### Lokal mit Git
 
 ```bash
-# Wiki-Repository aktualisieren
-cd WikiTest.wiki
+# Wiki-Repository aktualisieren (passen Sie den Namen an)
+cd [IhrRepo].wiki
 git pull origin master
 
 # Dateien bearbeiten
@@ -143,7 +166,7 @@ git push origin master
 
 1. **Neue Markdown-Datei erstellen**
    ```bash
-   cd WikiTest.wiki
+   cd [IhrRepo].wiki
    nano Neue-Seite.md
    ```
 
@@ -193,7 +216,7 @@ git push origin master
 ### Verzeichnisstruktur
 
 ```
-WikiTest.wiki/
+[IhrRepo].wiki/
 ├── Home.md                      # Startseite
 ├── _Sidebar.md                  # Navigation
 ├── _Footer.md                   # Footer
@@ -328,5 +351,7 @@ Nach der Einrichtung:
 Ihre Wissensdatenbank ist jetzt einsatzbereit. Viel Erfolg!
 
 ---
+
+**Hinweis**: Dieses Template verwendet `PensExpert-LS/WikiTest` als Beispiel-Repository. Ersetzen Sie alle Repository-spezifischen Verweise durch Ihre eigenen Werte (Organisation/Repository-Name).
 
 Bei Fragen: [Issue erstellen](https://github.com/PensExpert-LS/WikiTest/issues)

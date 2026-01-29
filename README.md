@@ -53,14 +53,19 @@ Das Repository enthält im `/wiki` Verzeichnis fertige Wiki-Seiten:
 ### Schritt 2: Wiki-Inhalte übertragen
 
 ```bash
-# Wiki-Repository klonen
-git clone https://github.com/PensExpert-LS/WikiTest.wiki.git
+# Wiki-Repository klonen (ersetzen Sie [IhrOrg] und [IhrRepo])
+git clone https://github.com/[IhrOrg]/[IhrRepo].wiki.git
 
 # In Wiki-Verzeichnis wechseln
-cd WikiTest.wiki
+cd [IhrRepo].wiki
 
-# Wiki-Seiten aus diesem Repository kopieren
-cp ../wiki/*.md .
+# Wiki-Seiten aus diesem Template-Repository kopieren
+# Option 1: Falls Sie das Template lokal geklont haben
+cp /pfad/zu/WikiTest/wiki/*.md .
+
+# Option 2: Template erst klonen, dann kopieren
+git clone https://github.com/PensExpert-LS/WikiTest.git
+cp WikiTest/wiki/*.md .
 
 # Committen und pushen
 git add .
@@ -70,7 +75,10 @@ git push origin master
 
 ### Schritt 3: Wiki nutzen
 
-Navigieren Sie zu `https://github.com/PensExpert-LS/WikiTest/wiki` um das Wiki zu sehen!
+Navigieren Sie zu `https://github.com/[IhrOrg]/[IhrRepo]/wiki` um Ihr Wiki zu sehen!
+
+**Beispiel**: Das Wiki für dieses Template finden Sie unter:
+`https://github.com/PensExpert-LS/WikiTest/wiki` (sobald aktiviert)
 
 ## 🎨 Anpassungen
 
@@ -98,9 +106,12 @@ Die Wiki-Seiten sind als Template gedacht und können angepasst werden:
 
 ## 🔗 Links
 
-- **Wiki**: [https://github.com/PensExpert-LS/WikiTest/wiki](https://github.com/PensExpert-LS/WikiTest/wiki)
+- **Wiki**: Aktivieren Sie das Wiki in Ihrem Repository, um es zu nutzen
+- **Template-Wiki** (Beispiel): [https://github.com/PensExpert-LS/WikiTest/wiki](https://github.com/PensExpert-LS/WikiTest/wiki) (sobald aktiviert)
 - **Issues**: [Problem melden](https://github.com/PensExpert-LS/WikiTest/issues)
 
 ---
+
+**Hinweis**: Dieses Repository ist ein Template. Passen Sie alle repository-spezifischen Verweise (URLs, E-Mails, etc.) an Ihre Organisation an.
 
 Viel Erfolg mit Ihrer Wissensdatenbank! 🎉

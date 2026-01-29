@@ -170,7 +170,7 @@ Wenn Sie im Urlaub krank werden:
   - Beantragte Tage
 
 **Erinnerungen:**
-- Q4: E-Mail-Reminder für Resturl aubusbplanung
+- Q4: E-Mail-Reminder für Resturlaubsplanung
 - Januar: Übersicht Resturlaub
 - März: Letzte Erinnerung
 
